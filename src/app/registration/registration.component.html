@@ -1,0 +1,41 @@
+<div class="row mx-auto">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <form role="form" [formGroup]="registerForm" id="wrapper">
+      <div class="form-group">
+        <p class="description">
+          <label for="firstName">First name</label>
+        </p>
+        <input type="text" class="form-control" id="firstName" name="firstName" formControlName='firstName' required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="lastName">Last name</label>
+        </p>
+        <input type="text" class="form-control" id="lastName" name="lastName" formControlName='lastName' required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="email">Email</label>
+        </p>
+        <input type="email" class="form-control" id="email" name="email" formControlName='email' required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="password">Password</label>
+        </p>
+        <input type="password" class="form-control" id="password" name="password" formControlName='password' required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="password1">Confirm password</label>
+        </p>
+        <input type="password" class="form-control" id="password1" name="password1" formControlName='password1' required>
+      </div>
+      <div class="text-center">
+        <input type="submit" name="submit" type="button" class="btn btn-primary" (click)="register()" value="Confirm" />
+      </div>
+      </form>
+  </div>
+</div>

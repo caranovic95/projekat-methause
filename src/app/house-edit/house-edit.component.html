@@ -1,0 +1,51 @@
+<div class="row mx-auto">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <form role="form" [formGroup]="houseEditForm">
+      <div class="form-group">
+        <p class="description">
+          <label for="naslov">Naslov</label>
+        </p>
+        <input type="text" class="form-control" formControlName="naslov" name="naslov" id="naslov" value="{{posts?.naslov}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="povrsina">Površina</label>
+        </p>
+        <input type="text" class="form-control" formControlName="povrsina" value="{{posts?.povrsina}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="brojSoba">Broj soba</label>
+        </p>
+        <input type="number" class="form-control" formControlName="brojSoba" value="{{posts?.brojSoba}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="brojTerasa">Broj terasa</label>
+        </p>
+        <input type="number" class="form-control" formControlName="brojTerasa" value="{{posts?.brojTerasa}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="cena">Cena</label>
+        </p>
+        <input type="number" class="form-control" formControlName="cena" value="{{posts?.cena}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="dostupno">Dostupno</label>
+        </p>
+        <input type="number" class="form-control" formControlName="dostupno" value="{{posts?.dostupno}}" required>
+      </div>
+      <div class="form-group">
+        <p class="description">
+          <label for="slika">Slika</label>
+        </p>
+        <input type="text" class="form-control" formControlName="slika" value="{{posts?.slika}}" required>
+      </div>
+      <button (click)="updateHouse()" type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+</div>

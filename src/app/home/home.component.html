@@ -1,0 +1,50 @@
+<div class="container shop">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="search-wrapper">
+            <label for="validationCustomUsername"><h4 class="title">Search</h4></label>
+            </div>
+            <div class="search-wrapper">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend" style="width:8em;">Povrsina</span>
+              </div>
+              <input type="text" class="form-control" id="validationCustomPovrsina"  placeholder="" name="povrsina"  [(ngModel)]="povrsina">
+            </div>
+            </div>
+            <div class="search-wrapper">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend" style="width:8em;">Cena</span>
+              </div>
+              <input type="text" class="form-control" id="validationCustomCena"  placeholder="" name="cena"  [(ngModel)]="cena">
+            </div>
+            </div>
+    
+        </div>
+    </div>
+    
+        <div class="container-fluid">
+            <div class= "row">
+                
+               
+        
+            <div class="col-md-3 item" *ngFor="let post of posts|houses:povrsina:cena">
+                <div class="item-wrapper">
+                    <h3 class="title">{{post.naslov}}</h3>
+                    <img class="img-fluid" src="{{post.slika}}" alt="" class="img-thumbnail">
+                    <p class="description">
+                        Povrsina: {{post.povrsina}}"
+                        <br>Broj soba: {{post.brojSoba}}
+                        <br>Broj terasa: {{post.brojTerasa}}
+                    </p>
+                    <p class="cena">
+                        {{post.cena}}.00 <span class="glyphicon">&#x20ac;</span>
+                    </p>
+                    <a routerLink="/house/{{post.id}}" class="btn btn-primary">
+                        <i class="fa fa-info-circle"></i>Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    

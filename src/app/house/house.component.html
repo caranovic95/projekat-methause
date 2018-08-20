@@ -1,0 +1,55 @@
+<div class="container shop">
+  <div class="card">
+    <div class="row">
+      <aside class="col-sm 7 border-right">
+          <img class="img-fluid2" src="{{posts?.slika}}">
+      </aside>
+
+
+
+      <aside class="col-sm-7">
+        <article class="card-body p-5">
+          <h3 class="title mb-3">{{posts?.naslov}}</h3>
+
+          <p class="price-detail-wrap">
+            <span class="price h3 text-warning">
+              <span class="num">{{posts?.cena}}.00 <span class="glyphicon">&#x20ac;</span></span>
+            </span>
+          </p>
+          <!-- price-detail-wrap .// -->
+          <dl class="item-property">
+            <dt>Povrsina</dt>
+            <dd>
+              <p>{{posts?.povrsina}}</p>
+            </dd>
+          </dl>
+          <dl class="param param-feature">
+            <dt>Broj soba</dt>
+            <dd>{{posts?.brojSoba}}</dd>
+          </dl>
+          <!-- item-property-hor .// -->
+          <dl class="param param-feature">
+            <dt>Broj terasa</dt>
+            <dd>{{posts?.brojTerasa}}</dd>
+          </dl>
+          <!-- item-property-hor .// -->
+          <dl class="param param-feature">
+            <dt>Left in stock</dt>
+            <dd>{{posts?.dostupno}}</dd>
+          </dl>
+          <!-- item-property-hor .// -->
+
+          <div *ngIf="isLogged&&isAdmin==0&&isAvailable" type="button" class="btn btn-outline-light text-dark" (click)="buy()"> Buy now </div>
+          <div class="btn btn-outline-light text-uppercase" *ngIf="isLogged&&isAdmin==0&&!isAvailable"> Out of stock </div>
+          <div type="button" class="btn btn-outline-light text-dark" *ngIf="!isLogged" routerLink="login"> Login to buy </div>
+          <div type="button" class="btn btn-outline-light text-dark" *ngIf="isAdmin==1" (click)="edit()"> Edit </div>
+          <div type="button" class="btn btn-outline-light text-dark" *ngIf="isAdmin==1" (click)="delete()"> Delete </div>
+        </article>
+        <!-- card-body.// -->
+      </aside>
+      <!-- col.// -->
+    </div>
+    <!-- row.// -->
+  </div>
+  <!-- card.// -->
+</div>
